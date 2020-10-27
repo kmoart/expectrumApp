@@ -1,0 +1,83 @@
+<h1>Artículo <small>Nombre del artículo</small></h1>
+
+<div class="row text-right">
+  <div class="col">
+    <button class="btn btn-danger"
+            routerLink="/list">
+      <i class="fa fa-arrow-left"></i>
+      Regresar a artículos
+    </button>
+  </div>
+</div>
+
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+    <form (ngSubmit) = "guardar( f )"
+          #f = "ngForm">
+      <div class="form-group">
+        <label>Firebase ID</label>
+        <input type="text"
+                class="form-control"
+                placeholder="Firebase ID"
+                [(ngModel)]="articulo.id"
+                name = "id"
+                disabled="disabled">
+         <small class="form-text text-muted">Este campo es autogenerado</small>       
+      </div>
+
+      <div class="form-group">
+        <label>Titulo:</label>
+        <input type="text"
+                class="form-control"
+                placeholder="Titulo del artículo"
+                [(ngModel)]="articulo.titulo"
+                name="titulo"
+                required>       
+      </div>
+
+      <div class="form-group">
+        <label>Imagen:</label>
+        <input type="text"
+                class="form-control"
+                placeholder="Ingrese URL de la imagen"
+                [(ngModel)]="articulo.imagen"
+                name="imagen"
+                required>       
+      </div>
+
+      <div class="form-group">
+        <label>Descripción corta:</label>
+        <input type="text"
+                class="form-control"
+                [(ngModel)]="articulo.desccorta"
+                name="desccorta"
+                placeholder="Ingrese una descripción corta"
+                required>       
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Descripción larga</label>
+        <textarea class="form-control"
+                   id="exampleFormControlTextarea1"
+                   rows="3"
+                   placeholder="Ingrese una descripción larga"
+                   [(ngModel)]="articulo.desclarga"
+                   name="desclarga"
+                   required>
+        </textarea>
+      </div>
+
+      <hr>
+
+      <div class="form-group text-center">
+          <button type="submit"
+                  class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Guardar
+          </button>
+      </div>
+
+    </form>
+  </div>
+</div>

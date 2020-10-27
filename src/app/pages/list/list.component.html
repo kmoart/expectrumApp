@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+
+<div class="m-5">
+
+  <h6>Lista de Artículos</h6>  
+  <hr>
+
+  <div class="row">
+    <div class="col text-right">
+      <button routerLink = "/articulo/nuevo" 
+        class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+          Agregar Nuevo Artículo
+      </button>
+    </div>
+  </div>
+  
+
+</div>
+
+<div    *ngIf="!cargando && pageOfItems.length > 0"
+        class="card-columns animated fadeIn faster">
+  <div *ngFor="let articulo of pageOfItems" class="card">
+    <img [src]="articulo.imagen" class="card-img-top" alt="...">
+    <div  class="card-body">
+      <h5 class="card-title">{{ articulo.titulo }}</h5>      
+      <h6>Descripción Corta: <p class="card-text">{{ articulo.desccorta }}</p></h6>
+      <!-- Button trigger modal -->
+      <button class="btn btn-primary" (click)="open( articulo.id )">Ver detalle del artículo</button>
+      <button class="btn btn-info ml-1"
+                    [routerLink]="['/articulo', articulo.id]">
+        <i class="fa fa-pencil"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="card-footer pb-0 pt-3">
+  <app-jw-pagination [items]="items" (changePage)="onChangePage($event)"></app-jw-pagination>
+</div>
+
+
+
+<div  *ngIf="!cargando && pageOfItems.length === 0"
+      class="alert alert-warning text-center mt-3 animated fadeIn faster">
+  <h4 class="alert-heading">No hay resgistros</h4>
+  <p>
+    <i class="fa fa-exclamation fa-2x"></i>
+  </p>
+</div>
+
+<div  *ngIf="cargando"
+      class="alert alert-info text-center mt-3 animated fadeIn faster">
+  <h4 class="alert-heading">Cargando</h4>
+  <p>
+    <i class="fa fa-refresh fa-spin fa-2x"></i>
+  </p>
+  <p class="mb-0">
+    Espere por favor
+  </p>
+</div>
+
+<app-footer></app-footer>

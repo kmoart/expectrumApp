@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="m-5">
+
+    <span>Últimos 5 artículos creados </span>
+    <hr>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <p class="card-text">Fecha de Creación:</p><h5 class="card-title">{{articulos[0].fecha | date : 'short' }}</h5>
+            <h5 class="card-title">{{ articulos[0].titulo }}</h5>   
+            <img [src]="articulos[0].imagen" class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <p class="card-text">Fecha de Creación:</p><h5 class="card-title">{{articulos[1].fecha | date : 'short' }}</h5>
+            <h5 class="card-title">{{ articulos[1].titulo }}</h5>  
+            <img [src]="articulos[1].imagen" class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <p class="card-text">Fecha de Creación:</p><h5 class="card-title">{{articulos[2].fecha | date : 'short' }}</h5>
+            <h5 class="card-title">{{ articulos[2].titulo }}</h5>  
+            <img [src]="articulos[2].imagen" class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <p class="card-text">Fecha de Creación:</p><h5 class="card-title">{{articulos[3].fecha | date : 'short' }}</h5>
+            <h5 class="card-title">{{ articulos[3].titulo }}</h5>  
+            <img [src]="articulos[3].imagen" class="d-block w-50 m-auto" alt="...">
+          </div>
+          <div class="carousel-item">
+            <p class="card-text">Fecha de Creación:</p><h5 class="card-title">{{articulos[4].fecha | date : 'short' }}</h5>
+            <h5 class="card-title">{{ articulos[4].titulo }}</h5>  
+            <img [src]="articulos[4].imagen" class="d-block w-50 m-auto" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+</div>
+
+<app-footer></app-footer>
+
